@@ -5,7 +5,7 @@ function main() {
     var condition = [false, false, false, false, false];
     $('#message').hide();
 
-    function refresh() {
+    function check() {
         var $pass = $('#pass').val();
         console.log($pass);
         for (var i = 0; i < $pass.length; i++) {
@@ -44,7 +44,11 @@ function main() {
         }
     }
 
-    function check() {
+    function isSpecialChar(x) {
+        return isNaN(x) && x.toUpperCase() === x.toLowerCase() ? true : false;
+    }
+
+    $('#pass').on('keyup', function() {
         if (event.code == "Backspace") {
             console.log('brise karakter');
             condition = [false, false, false, false, false];
@@ -53,14 +57,8 @@ function main() {
             }
             $('#checkbox').attr('checked', false);
         }
-        refresh();
-    }
-
-    function isSpecialChar(x) {
-        return isNaN(x) && x.toUpperCase() === x.toLowerCase() ? true : false;
-    }
-
-    $('#pass').on('keyup', check);
+        check();
+    });
 
     $('#pass').on('focus', function(){
         check();
