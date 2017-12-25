@@ -14,14 +14,13 @@
 
 <body>
     <h1>Password Strength Checker</h1>
-    <form>
+    <form id="submit">
         <label>Email:</label>
         <input type="email" name="email" id="email" required />
-        <br/>
         <label>Password:</label>
-        <input type="text" name="password" id="pass" />
-        <br/>
-        <input type="submit" value="submit" id="check">
+        <input type="password" name="password" id="pass" required/>
+        <input type="submit" value="Prijavi se">
+        <p id="message"></p>
     </form>
     <table>
         <tr>
