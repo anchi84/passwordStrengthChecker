@@ -48,8 +48,8 @@ function main() {
         return isNaN(x) && x.toUpperCase() === x.toLowerCase() ? true : false;
     }
 
-    $('#pass').on('keyup', function() {
-        if (event.code == "Backspace") {
+    $('#pass').on('keyup', function(event) {
+        if (event.keyCode == "8") {
             console.log('brise karakter');
             condition = [false, false, false, false, false];
             for(i = 0; i <= 8; i = i + 2) {
@@ -68,9 +68,9 @@ function main() {
     $('#pass').on('blur', function() {
         check();
          if (condition[0] == true && condition[1] == true && condition[2] == true && condition[3] == true && condition[4] == true) {
-            $('#message').html('<i class="fa fa-check-circle" aria-hidden="true"></i>'+"Sifra ispunjava sve potrebne uslove. Kliknite na 'Prijavi se'!");
+            $('#message').html('<i class="fa fa-check-circle" aria-hidden="true"></i>'+" Šifra ispunjava sve potrebne uslove. Kliknite na 'Prijavi se'!");
         } else if (condition[0] == false || condition[1] == false || condition[2] == false || condition[3] == false || condition[4] == false) {
-            $('#message').html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>'+"Sifra ne ispunjava sve potrebne uslove. Pokusajte ponovo!");
+            $('#message').html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>'+" Šifra ne ispunjava sve potrebne uslove. Pokušajte ponovo!");
         }
         $('#message').show();
     });
@@ -80,7 +80,7 @@ function main() {
             alert("Hvala na prijavi!");
             return true;
         } else {
-            alert("Sifra ne ispunjava sve potrebne uslove. Pokusajte ponovo!");
+            alert("Šifra ne ispunjava sve potrebne uslove. Pokušajte ponovo!");
             return false;
         }
     });   
