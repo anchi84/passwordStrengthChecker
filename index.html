@@ -14,14 +14,14 @@
 
 <body>
     <h1>Password Strength Checker</h1>
-    <form id="submit">
+    <form>
         <label>Email:</label>
         <input type="email" name="email" id="email" required />
         <label>Password:</label>
         <input type="password" name="password" id="pass" required/>
-        <input type="submit" value="Prijavi se">
-        <p id="message"></p>
+        <input type="submit" value="Prijavi se" id="button">
     </form>
+    <p id="message"></p>
     <table>
         <tr>
             <td><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></td>
@@ -43,13 +43,13 @@
             <td><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></td>
             <td>&nbsp;barem 8 karaktera</td>
         </tr>
-        <tr>
-            <td>
-                <input type="checkbox" id="checkbox" onclick="return false;" />
-            </td>
-            <td>&nbsp;svi uslovi ispunjeni</td>
-        </tr>
     </table>
+            
+    <div>
+        <input type="checkbox" id="checkbox" onclick="return false;" />
+        <span id="done">&nbsp;svi uslovi ispunjeni</span>
+    </div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
